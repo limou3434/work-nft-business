@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 作为较次层的父 pom，版本管理已经交给顶层父 pom 了，因此这种模块直接统一依赖给多个子模块共用就可以 -->
+
     <!-- 元数描述 -->
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
@@ -70,22 +72,55 @@
     </modules>
 
     <!-- 依赖描述 -->
-    <dependencyManagement>
-        <dependencies>
+    <dependencies>
 
-            <!-- Modules -->
-            <!-- 如果是单模块项目，${project.version} 直接等于自身 POM 中 <version> 的值 -->
-            <!-- 如果是子模块，${project.version} 优先取子模块自身的 <version>，如果子模块没显式定义 <version>，则继承父模块的 <version> -->
-            <!-- 这里把所有的子模块也放入依赖管理就可以，这样在其他子模块中各自使用就不再需要声明版本 -->
-            <!-- Base -->
-            <dependency>
-                <groupId>cn.com.edtechhub</groupId>
-                <artifactId>nft-base</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.9.20.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.14.0</version>
+        </dependency>
 
-        </dependencies>
-    </dependencyManagement>
+    </dependencies>
 
     <!-- 编译描述 -->
     <build>

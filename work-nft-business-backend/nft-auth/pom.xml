@@ -61,5 +61,11 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Develop -->
+        <dependency>
+            <groupId>cn.com.edtechhub</groupId>
+            <artifactId>nft-base</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 作为最顶层的父 pom，需要承担最为重要的版本管理问题，并且作为模板为其他模块使用 -->
+
     <!-- 元数描述 -->
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
@@ -140,8 +142,8 @@
             </dependency>
 
             <!-- Modules -->
-            <!-- 如果是单模块项目，${project.version} 直接等于自身 POM 中 <version> 的值 -->
-            <!-- 如果是子模块，${project.version} 优先取子模块自身的 <version>，如果子模块没显式定义 <version>，则继承父模块的 <version> -->
+            <!-- 如果仅是单模块项目，${project.version} 直接等于自身 POM 中 <version> 的值 -->
+            <!-- 如果是多子模块项目，${project.version} 优先取子模块自身的 <version>，如果子模块没显式定义 <version>，则继承父模块的 <version> -->
             <!-- 这里把所有的子模块也放入依赖管理就可以，这样在其他子模块中各自使用就不再需要声明版本 -->
             <!-- Configuration -->
             <dependency>
@@ -161,12 +163,6 @@
                 <artifactId>nft-auth</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <!-- Common -->
-            <dependency>
-                <groupId>cn.com.edtechhub</groupId>
-                <artifactId>nft-common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
             <!-- Business -->
             <dependency>
                 <groupId>cn.com.edtechhub</groupId>
@@ -183,6 +179,112 @@
             <dependency>
                 <groupId>cn.com.edtechhub</groupId>
                 <artifactId>nft-check</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- Common -->
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-lock</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-limiter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-datasource</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-rpc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-cache</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-file</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-sms</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-job</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-sa-token</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-mq</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-es</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-seata</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-prometheus</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-order-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-tcc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-skywalking</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
