@@ -23,12 +23,12 @@ public class BaseResponse implements Serializable {
     private Boolean success;
 
     /**
-     * 出参编码
+     * 响应编码
      */
     private String responseCode;
 
     /**
-     * 出参消息
+     * 响应消息
      */
     private String responseMessage;
 

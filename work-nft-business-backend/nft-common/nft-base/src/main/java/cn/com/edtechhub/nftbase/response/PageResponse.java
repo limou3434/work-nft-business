@@ -44,7 +44,7 @@ public class PageResponse<T> extends MultiResponse<T> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 响应构造方法
+     * 构造成功响应方法
      *
      * @param datas
      * @param total
