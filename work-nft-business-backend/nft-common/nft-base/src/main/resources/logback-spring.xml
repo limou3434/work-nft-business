@@ -13,8 +13,8 @@
     <property name="APP_NAME" value="${app.name}"/>
     <property name="LOG_PATH" value="./logs"/>
     <property name="LOG_FILE" value="${LOG_PATH}/${APP_NAME}.log"/>
-    <property name="FILE_LOG_PATTERN" value="%-5level[日志时间 %d] - [线程名称 %thread] - [动作类名 %logger]：%sensitive%n"/>
-    <property name="CONSOLE_LOG_PATTERN" value="%-5level[日志时间 %d] - [线程名称 %thread] - [动作类名 %logger]：日志内容 %sensitive%n"/>
+    <property name="FILE_LOG_PATTERN" value="%-5level[日志时间 %d] - [线程名称 %thread] - [动作类名 %logger] - 日志内容：%sensitive%n"/>
+    <property name="CONSOLE_LOG_PATTERN" value="%-5level[日志时间 %d] - [线程名称 %thread] - [动作类名 %logger] - 日志内容：%sensitive%n"/>
 
     <!-- 定义名为 APPLICATION 的日志输出器，类型为按 “大小 + 时间” 滚动的文件输出器 -->
     <appender name="APPLICATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
