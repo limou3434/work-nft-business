@@ -1,40 +1,34 @@
+
 package cn.com.edtechhub.nftbase.exception;
 
 import lombok.Getter;
 
 /**
- * 存储错误码
+ * 远调异常可选的异常代码
  *
  * @author limou3434
  */
 @Getter
-public enum RepoErrorCode implements ErrorCode {
+public enum RemoteCallErrorCode implements ErrorCode {
 
     /**
-     * 未知错误
+     * 远程调用返回结果为空
      */
-    UNKNOWN_ERROR("UNKNOWN_ERROR", "未知错误"),
+    REMOTE_CALL_RESPONSE_IS_NULL("REMOTE_CALL_RESPONSE_IS_NULL", "远程调用返回结果为空"),
 
     /**
-     * 数据库插入失败
+     * 远程调用返回结果失败
      */
-    INSERT_FAILED("INSERT_FAILED", "数据库插入失败"),
-
-    /**
-     * 数据库更新失败
-     */
-    UPDATE_FAILED("UPDATE_FAILED", "数据库更新失败");
+    REMOTE_CALL_RESPONSE_IS_FAILED("REMOTE_CALL_RESPONSE_IS_FAILED", "远程调用返回结果失败");
 
     /**
      * 错误编码
      */
-    @Getter
     private final String code;
 
     /**
      * 错误信息
      */
-    @Getter
     private final String message;
 
     /**
@@ -43,7 +37,7 @@ public enum RepoErrorCode implements ErrorCode {
      * @param code
      * @param message
      */
-    RepoErrorCode(String code, String message) {
+    RemoteCallErrorCode(String code, String message) {
         this.code = code;
         this.message = message;
     }

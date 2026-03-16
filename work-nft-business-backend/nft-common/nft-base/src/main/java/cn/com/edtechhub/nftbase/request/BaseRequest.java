@@ -6,7 +6,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * 通用请求
+ * 通用请求体
  *
  * @author limou3434
  */

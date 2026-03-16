@@ -26,7 +26,7 @@ import lombok.EqualsAndHashCode;
 public class SystemException extends RuntimeException {
 
     /**
-     * 错误
+     * 异常代码接口实例
      */
     private ErrorCode errorCode;
 

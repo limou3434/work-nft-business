@@ -1,20 +1,29 @@
-
 package cn.com.edtechhub.nftbase.exception;
 
 import lombok.Getter;
 
 /**
- * 限流错误码
+ * 系统异常可选的异常代码
  *
  * @author limou3434
  */
 @Getter
-public enum BlockErrorCode implements ErrorCode {
+public enum SystemErrorCode implements ErrorCode {
 
     /**
-     * 请求被限流
+     * 未知错误
      */
-    REQUEST_IS_BLOCKED("REQUEST_IS_BLOCKED", "请求被限流啦~");
+    UNKNOWN_ERROR("UNKNOWN_ERROR", "未知错误"),
+
+    /**
+     * 数据库插入失败
+     */
+    INSERT_FAILED("INSERT_FAILED", "数据库插入失败"),
+
+    /**
+     * 数据库更新失败
+     */
+    UPDATE_FAILED("UPDATE_FAILED", "数据库更新失败");
 
     /**
      * 错误编码
@@ -32,7 +41,7 @@ public enum BlockErrorCode implements ErrorCode {
      * @param code
      * @param message
      */
-    BlockErrorCode(String code, String message) {
+    SystemErrorCode(String code, String message) {
         this.code = code;
         this.message = message;
     }

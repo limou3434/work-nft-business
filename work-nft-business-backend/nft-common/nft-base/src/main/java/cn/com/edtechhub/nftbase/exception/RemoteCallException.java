@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 项目内部自定义的业务异常
+ * 项目内部自定义的远调异常
  *                       +------------------------+
  *                       |        Throwable       | 所有异常的根类
  *                       +------------------------+
@@ -23,7 +23,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BizException extends RuntimeException {
+public class RemoteCallException extends RuntimeException {
 
     /**
      * 异常代码接口实例
@@ -35,23 +35,23 @@ public class BizException extends RuntimeException {
      *
      * @param errorCode
      */
-    public BizException(ErrorCode errorCode) {
+    public RemoteCallException(ErrorCode errorCode) {
         super(errorCode.getMessage());
         this.errorCode = errorCode;
     }
-    public BizException(String message, ErrorCode errorCode) {
+    public RemoteCallException(String message, ErrorCode errorCode) {
         super(message);
         this.errorCode = errorCode;
     }
-    public BizException(String message, Throwable cause, ErrorCode errorCode) {
+    public RemoteCallException(String message, Throwable cause, ErrorCode errorCode) {
         super(message, cause);
         this.errorCode = errorCode;
     }
-    public BizException(Throwable cause, ErrorCode errorCode) {
+    public RemoteCallException(Throwable cause, ErrorCode errorCode) {
         super(cause);
         this.errorCode = errorCode;
     }
-    public BizException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, ErrorCode errorCode) {
+    public RemoteCallException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, ErrorCode errorCode) {
         super(message, cause, enableSuppression, writableStackTrace);
         this.errorCode = errorCode;
     }

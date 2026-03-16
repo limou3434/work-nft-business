@@ -3,7 +3,7 @@ package cn.com.edtechhub.nftbase.exception;
 import lombok.Getter;
 
 /**
- * 通用错误码
+ * 业务异常可选的异常代码
  *
  * @author limou3434
  */
@@ -41,14 +41,9 @@ public enum BizErrorCode implements ErrorCode {
     DUPLICATED("DUPLICATED", "重复请求"),
 
     /**
-     * 远程调用返回结果为空
+     * 请求被限流
      */
-    REMOTE_CALL_RESPONSE_IS_NULL("REMOTE_CALL_RESPONSE_IS_NULL", "远程调用返回结果为空"),
-
-    /**
-     * 远程调用返回结果失败
-     */
-    REMOTE_CALL_RESPONSE_IS_FAILED("REMOTE_CALL_RESPONSE_IS_FAILED", "远程调用返回结果失败");
+    REQUEST_IS_BLOCKED("REQUEST_IS_BLOCKED", "请求被限流啦~");
 
     /**
      * 错误编码
