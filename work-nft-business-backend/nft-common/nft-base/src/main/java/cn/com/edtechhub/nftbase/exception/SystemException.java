@@ -2,6 +2,7 @@ package cn.com.edtechhub.nftbase.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 项目内部自定义的系统异常
@@ -21,6 +22,7 @@ import lombok.EqualsAndHashCode;
  *
  * @author limou3434
  */
+@Slf4j
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class SystemException extends RuntimeException {
@@ -38,22 +40,27 @@ public class SystemException extends RuntimeException {
     public SystemException(ErrorCode errorCode) {
         super(errorCode.getMessage());
         this.errorCode = errorCode;
+        log.error("异常编码: {}, 异常信息: {}", errorCode.getCode(), errorCode.getMessage());
     }
     public SystemException(String message, ErrorCode errorCode) {
         super(message);
         this.errorCode = errorCode;
+        log.error("异常编码: {}, 异常信息: {}, 开发提示 {}", errorCode.getCode(), errorCode.getMessage(), message);
     }
     public SystemException(String message, Throwable cause, ErrorCode errorCode) {
         super(message, cause);
         this.errorCode = errorCode;
+        log.error("异常编码: {}, 异常信息: {}, 开发提示 {}, 具体成因 {}", errorCode.getCode(), errorCode.getMessage(), message, cause.getMessage());
     }
     public SystemException(Throwable cause, ErrorCode errorCode) {
         super(cause);
         this.errorCode = errorCode;
+        log.error("异常编码: {}, 异常信息: {}, 具体成因 {}", errorCode.getCode(), errorCode.getMessage(), cause.getMessage());
     }
     public SystemException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, ErrorCode errorCode) {
         super(message, cause, enableSuppression, writableStackTrace);
         this.errorCode = errorCode;
+        log.error("异常编码: {}, 异常信息: {}, 具体成因 {}, {}", errorCode.getCode(), errorCode.getMessage(), cause.getMessage(), "已经开启 “收集次要异常” 和 “写入堆栈轨迹”");
     }
 
 }

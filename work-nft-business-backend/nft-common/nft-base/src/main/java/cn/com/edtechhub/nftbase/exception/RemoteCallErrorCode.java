@@ -22,12 +22,12 @@ public enum RemoteCallErrorCode implements ErrorCode {
     REMOTE_CALL_RESPONSE_IS_FAILED("REMOTE_CALL_RESPONSE_IS_FAILED", "远程调用返回结果失败");
 
     /**
-     * 错误编码
+     * 异常编码
      */
     private final String code;
 
     /**
-     * 错误信息
+     * 异常信息
      */
     private final String message;
 

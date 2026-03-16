@@ -43,15 +43,20 @@ public enum BizErrorCode implements ErrorCode {
     /**
      * 请求被限流
      */
-    REQUEST_IS_BLOCKED("REQUEST_IS_BLOCKED", "请求被限流啦~");
+    REQUEST_IS_BLOCKED("REQUEST_IS_BLOCKED", "请求被限流"),
 
     /**
-     * 错误编码
+     * 等待定义
+     */
+    WAITING_FOR_DEFINITION("WAITING_FOR_DEFINITION", "等待开发者定义该类型的异常代码");
+
+    /**
+     * 异常编码
      */
     private final String code;
 
     /**
-     * 错误信息
+     * 异常信息
      */
     private final String message;
 

@@ -26,12 +26,12 @@ public enum SystemErrorCode implements ErrorCode {
     UPDATE_FAILED("UPDATE_FAILED", "数据库更新失败");
 
     /**
-     * 错误编码
+     * 异常编码
      */
     private final String code;
 
     /**
-     * 错误信息
+     * 异常信息
      */
     private final String message;
 
