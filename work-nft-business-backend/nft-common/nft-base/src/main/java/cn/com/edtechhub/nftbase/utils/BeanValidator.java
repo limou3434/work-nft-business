@@ -44,7 +44,7 @@ public class BeanValidator {
      * @param groups groups
      */
     public static void validateObject(Object object, Class<?>... groups) throws ValidationException {
-        // 传入待校验对象 + 校验分组（groups 可选参数），返回所有校验失败的结果
+        // 传入待校验对象 + 校验分组（groups 可选参数），返回所有校验失败的结果，这里被校验的对象中，会被 Hibernate Validator 内部解析出使用的注解，然后会根据注解上书写的规则进行校验
         Set<ConstraintViolation<Object>> constraintViolations = validator.validate(object, groups);
 
         // 判断是否有校验失败的结果，只取第一个失败结果的错误信息，因为 failFast(true) 保证只有一个
