@@ -36,7 +36,7 @@ public class BizException extends RuntimeException {
     /**
      * 对齐 RuntimeException 的一系列构造函数
      *
-     * @param errorCode
+     * @param errorCode 异常代码接口实例
      */
     public BizException(ErrorCode errorCode) {
         super(errorCode.getMessage());
@@ -46,22 +46,22 @@ public class BizException extends RuntimeException {
     public BizException(String message, ErrorCode errorCode) {
         super(message);
         this.errorCode = errorCode;
-        log.error("异常编码: {}, 异常信息: {}, 开发提示 {}", errorCode.getCode(), errorCode.getMessage(), message);
+        log.error("异常编码: {}, 异常信息: {}, 开发提示: {}", errorCode.getCode(), errorCode.getMessage(), message);
     }
     public BizException(String message, Throwable cause, ErrorCode errorCode) {
         super(message, cause);
         this.errorCode = errorCode;
-        log.error("异常编码: {}, 异常信息: {}, 开发提示 {}, 具体成因 {}", errorCode.getCode(), errorCode.getMessage(), message, cause.getMessage());
+        log.error("异常编码: {}, 异常信息: {}, 开发提示: {}", errorCode.getCode(), errorCode.getMessage(), message, cause);
     }
     public BizException(Throwable cause, ErrorCode errorCode) {
         super(cause);
         this.errorCode = errorCode;
-        log.error("异常编码: {}, 异常信息: {}, 具体成因 {}", errorCode.getCode(), errorCode.getMessage(), cause.getMessage());
+        log.error("异常编码: {}, 异常信息: {}", errorCode.getCode(), errorCode.getMessage(), cause);
     }
     public BizException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, ErrorCode errorCode) {
         super(message, cause, enableSuppression, writableStackTrace);
         this.errorCode = errorCode;
-        log.error("异常编码: {}, 异常信息: {}, 具体成因 {}, {}", errorCode.getCode(), errorCode.getMessage(), cause.getMessage(), "已经开启 “收集次要异常” 和 “写入堆栈轨迹”");
+        log.error("异常编码: {}, 异常信息: {}, 开发提示: {}, {}", errorCode.getCode(), errorCode.getMessage(), message, "已经开启 “收集次要异常” 和 “写入堆栈轨迹”", cause);
     }
 
 }

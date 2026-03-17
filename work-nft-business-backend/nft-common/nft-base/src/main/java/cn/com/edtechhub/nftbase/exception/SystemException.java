@@ -45,22 +45,22 @@ public class SystemException extends RuntimeException {
     public SystemException(String message, ErrorCode errorCode) {
         super(message);
         this.errorCode = errorCode;
-        log.error("异常编码: {}, 异常信息: {}, 开发提示 {}", errorCode.getCode(), errorCode.getMessage(), message);
+        log.error("异常编码: {}, 异常信息: {}, 开发提示: {}", errorCode.getCode(), errorCode.getMessage(), message);
     }
     public SystemException(String message, Throwable cause, ErrorCode errorCode) {
         super(message, cause);
         this.errorCode = errorCode;
-        log.error("异常编码: {}, 异常信息: {}, 开发提示 {}, 具体成因 {}", errorCode.getCode(), errorCode.getMessage(), message, cause.getMessage());
+        log.error("异常编码: {}, 异常信息: {}, 开发提示: {}", errorCode.getCode(), errorCode.getMessage(), message, cause);
     }
     public SystemException(Throwable cause, ErrorCode errorCode) {
         super(cause);
         this.errorCode = errorCode;
-        log.error("异常编码: {}, 异常信息: {}, 具体成因 {}", errorCode.getCode(), errorCode.getMessage(), cause.getMessage());
+        log.error("异常编码: {}, 异常信息: {}", errorCode.getCode(), errorCode.getMessage(), cause);
     }
     public SystemException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, ErrorCode errorCode) {
         super(message, cause, enableSuppression, writableStackTrace);
         this.errorCode = errorCode;
-        log.error("异常编码: {}, 异常信息: {}, 具体成因 {}, {}", errorCode.getCode(), errorCode.getMessage(), cause.getMessage(), "已经开启 “收集次要异常” 和 “写入堆栈轨迹”");
+        log.error("异常编码: {}, 异常信息: {}, 开发提示: {}, {}", errorCode.getCode(), errorCode.getMessage(), message, "已经开启 “收集次要异常” 和 “写入堆栈轨迹”", cause);
     }
 
 }
