@@ -1,7 +1,7 @@
 package cn.com.edtechhub.nftbase.exception;
 
 /**
- * 异常代码接口，所有不同类型的错误码枚举类必须实现这个接口（is-a 用继承、has-a 用组合、标化动作用接口）
+ * 作为异常代码的行为，所有不同类型的错误码枚举类必须实现这个接口（标化行为用接口、is-a 用继承、has-a 用组合）
  *
  * @author limou3434
  */
