@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 元数描述 -->
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <name>nft-user</name>
+    <description>nft-user</description>
+    <url>https://github.com/limou3434</url>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>limou3434</id> <!-- 开发者标识 -->
+            <name>ljp</name> <!-- 开发者姓名 -->
+            <email>898738804@qq.com</email> <!-- 开发者邮箱 -->
+            <roles>
+                <role>developer</role> <!-- 开发者职责 -->
+            </roles>
+            <organization>work</organization> <!-- 所属组织 -->
+        </developer>
+    </developers>
+
+    <!-- 标识描述 -->
+    <artifactId>nft-user</artifactId>
+
+    <!-- 继承描述 -->
+    <parent>
+        <groupId>cn.com.edtechhub</groupId>
+        <artifactId>nft-business</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <!-- 版本描述 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <application.name>nft-user</application.name>
+    </properties>
+
+    <!-- 模块描述 -->
+    <!-- 本模块无子模块 -->
+
+    <!-- 依赖描述 -->
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.edtechhub</groupId>
+            <artifactId>nft-base</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

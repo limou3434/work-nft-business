@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!-- 元数描述 -->
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>nft-business</name>
     <description>nft-business</description>
     <url>https://github.com/limou3434</url>
@@ -45,27 +45,20 @@
     </properties>
 
     <!-- 模块描述 -->
-    <!-- 本模块无子模块 -->
+    <modules>
+        <module>nft-app</module>
+        <module>nft-user</module>
+        <module>nft-inventory</module>
+        <module>nft-goods</module>
+        <module>nft-order</module>
+        <module>nft-trade</module>
+        <module>nft-pay</module>
+        <module>nft-chain</module>
+        <module>nft-notice</module>
+    </modules>
 
     <!-- 依赖描述 -->
     <dependencies>
-
-        <!-- Spring -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Develop -->
-        <dependency>
-            <groupId>cn.com.edtechhub</groupId>
-            <artifactId>nft-base</artifactId>
-        </dependency>
-
+        <!-- 业务模块内部的子模块直接复用 nft-common 中的模块就可以获得大量的复用代码，无需在这里进行复用 -->
     </dependencies>
 </project>

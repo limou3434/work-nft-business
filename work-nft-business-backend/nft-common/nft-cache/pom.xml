@@ -50,10 +50,17 @@
     <!-- 依赖描述 -->
     <dependencies>
 
-         <dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
             <groupId>cn.com.edtechhub</groupId>
             <artifactId>nft-base</artifactId>
         </dependency>
-
     </dependencies>
 </project>
