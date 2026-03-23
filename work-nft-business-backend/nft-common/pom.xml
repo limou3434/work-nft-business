@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!-- 作为较次层的父 pom，版本管理已经交给顶层父 pom 了，因此这种模块直接统一依赖给多个子模块共用就可以 -->
+    <!-- 作为较次层的父 pom，版本管理已经交给顶层父 pom 了，因此这种模块直接统一依赖给多个子模块共用就可以，不需要理会版本的问题，但是子模块需要自己配置独有依赖 -->
 
     <!-- 元数描述 -->
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <name>nft-common</name>
-    <description>work-nft-business-backend</description>
+    <description>nft-common</description>
     <url>https://github.com/limou3434</url>
     <licenses>
         <license>

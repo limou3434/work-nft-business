@@ -8,14 +8,18 @@ package cn.com.edtechhub.nftbase.response;
 public enum ResponseCode {
 
     /**
-     * 成功执行
+     * 执行成功
      */
     SUCCESS,
 
     /**
-     * 重复执行
+     * 执行重复
      */
     DUPLICATED,
+
+    // TODO：这里加一个执行失败的状态，替代下面的业务错误
+
+    // TODO：这里加一个执行异常的状态，替代下面的业务错误
 
     /**
      * 参数非法

@@ -2,8 +2,6 @@ package cn.com.edtechhub.nftbase.response;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serial;
 import java.util.List;
