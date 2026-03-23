@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!-- 元数描述 -->
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>nft-goods</name>
     <description>nft-goods</description>
     <url>https://github.com/limou3434</url>
@@ -45,23 +45,13 @@
     </properties>
 
     <!-- 模块描述 -->
-    <!-- 本模块无子模块 -->
+<!--    <modules>-->
+<!--        <module>nft-turbo-interface</module>-->
+<!--        <module>nft-turbo-collection</module>-->
+<!--        <module>nft-turbo-box</module>-->
+<!--    </modules>-->
 
     <!-- 依赖描述 -->
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.edtechhub</groupId>
-            <artifactId>nft-base</artifactId>
-        </dependency>
-
     </dependencies>
 </project>
