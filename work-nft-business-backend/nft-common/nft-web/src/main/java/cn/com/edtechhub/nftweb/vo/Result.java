@@ -2,16 +2,14 @@ package cn.com.edtechhub.nftweb.vo;
 
 import cn.com.edtechhub.nftbase.response.ResponseCode;
 import cn.com.edtechhub.nftbase.response.SingleResponse;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * HTTP 报文中的载荷类 TODO：我还是无法理解为什么需要自己包一层载荷，只能勉强解释为为了分层概念
  *
  * @author limou3434
  */
-@Getter
-@Setter
+@Data
 public class Result<T> {
 
     /**
@@ -57,6 +55,7 @@ public class Result<T> {
     }
 
     // TODO：这个方法真的需要么？
+
     /**
      * 自定义构造器
      *

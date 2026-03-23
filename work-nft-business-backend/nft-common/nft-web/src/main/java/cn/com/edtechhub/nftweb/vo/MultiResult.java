@@ -1,26 +1,29 @@
 package cn.com.edtechhub.nftweb.vo;
 
-import lombok.Getter;
-import lombok.Setter;
+import cn.com.edtechhub.nftbase.response.ResponseCode;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
-
-import static cn.hollis.nft.turbo.base.response.ResponseCode.SUCCESS;
 
 /**
  * @author limou3434
  */
-@Getter
-@Setter
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class MultiResult<T> extends Result<List<T>> {
+
+    // TODO：这里的字段含义感觉很奇怪，后续用的时候对照一下
     /**
      * 总记录数
      */
     private long total;
+
     /**
      * 当前页码
      */
     private int page;
+
     /**
      * 每页记录数
      */
@@ -38,7 +41,7 @@ public class MultiResult<T> extends Result<List<T>> {
     }
 
     public static <T> MultiResult<T> successMulti(List<T> data, long total, int page, int size) {
-        return new MultiResult<>(true, SUCCESS.name(), SUCCESS.name(), data, total, page, size);
+        return new MultiResult<>(true, ResponseCode.SUCCESS.name(), ResponseCode.SUCCESS.name(), data, total, page, size);
     }
 
     public static <T> MultiResult<T> errorMulti(String errorCode, String errorMsg) {
