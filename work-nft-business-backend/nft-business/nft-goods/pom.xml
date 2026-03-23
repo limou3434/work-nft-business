@@ -45,13 +45,14 @@
     </properties>
 
     <!-- 模块描述 -->
-<!--    <modules>-->
-<!--        <module>nft-turbo-interface</module>-->
-<!--        <module>nft-turbo-collection</module>-->
-<!--        <module>nft-turbo-box</module>-->
-<!--    </modules>-->
+    <modules>
+        <module>nft-interface</module>
+        <module>nft-collection</module>
+        <module>nft-box</module>
+    </modules>
 
     <!-- 依赖描述 -->
     <dependencies>
+        <!-- 业务模块内部的子模块直接复用 nft-common 中的模块就可以获得大量的复用代码，无需在这里进行复用 -->
     </dependencies>
 </project>
