@@ -1,4 +1,4 @@
-package cn.com.edtechhub.nftbase;
+package cn.com.edtechhub.nftweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class NftBaseApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NftBaseApplication.class, args);
+        SpringApplication.run(cn.com.edtechhub.nftbase.NftBaseApplication.class, args);
     }
 
 }
