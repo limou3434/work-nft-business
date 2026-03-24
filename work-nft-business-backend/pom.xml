@@ -446,7 +446,7 @@
                 <directory>src/main/resources</directory>
                 <!-- 指定纳入处理范围的资源文件 -->
                 <includes>
-                    <include>*/**</include> <!-- 这个和默认行为其实一样的 -->
+                    <include>*/**</include> <!-- 所有文件都会被加载进资源中 -->
                 </includes>
                 <!-- 开启资源文件占位符替换功能（实际上就是开启 yaml 配置文件允许解析 pom 中定义的变量） -->
                 <filtering>true</filtering>

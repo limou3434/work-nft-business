@@ -21,8 +21,8 @@ public class SpringContextHolder implements ApplicationContextAware {
     /**
      * 设置当前 Spring 上下文到静态成员变量中
      *
-     * @param applicationContext
-     * @throws BeansException
+     * @param applicationContext Spring 上下文
+     * @throws BeansException 抛出的异常
      */
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -32,8 +32,8 @@ public class SpringContextHolder implements ApplicationContextAware {
     /**
      * 从 Spring 上下文中获取对应名称的 Bean
      *
-     * @param name
-     * @return
+     * @param name Bean 名称
+     * @return Bean 对象
      */
     public static Object getBean(String name) {
         return applicationContext.getBean(name);
@@ -42,9 +42,9 @@ public class SpringContextHolder implements ApplicationContextAware {
     /**
      * 从 Spring 上下文中获取对应类名的 Bean
      *
-     * @param name
-     * @param <T>
-     * @return
+     * @param name Bean 类名
+     * @param <T> 泛型
+     * @return Bean 对象
      */
     public static <T> T getBean(Class<T> name) {
         return applicationContext.getBean(name);
