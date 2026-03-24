@@ -62,6 +62,10 @@
             <groupId>cn.com.edtechhub</groupId>
             <artifactId>nft-base</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.com.edtechhub</groupId>
+            <artifactId>nft-cache</artifactId>
+        </dependency>
 
     </dependencies>
 </project>
