@@ -1,6 +1,5 @@
 package cn.com.edtechhub.nftlock;
 
-import cn.hollis.nft.turbo.lock.DistributeLockAspect;
 import org.redisson.api.RedissonClient;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
