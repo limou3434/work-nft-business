@@ -193,6 +193,66 @@
                 <artifactId>nft-business</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-app</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-user</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-inventory</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-order</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-goods</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-collection</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-box</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-interface</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-pay</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-trade</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-chain</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.edtechhub</groupId>
+                <artifactId>nft-notice</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
             <!-- Admin -->
             <dependency>
                 <groupId>cn.com.edtechhub</groupId>
