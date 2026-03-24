@@ -1,4 +1,4 @@
-package cn.com.edtechhub.nftrpc.facade;
+package cn.com.edtechhub.nftrpc;
 
 import cn.com.edtechhub.nftbase.exception.BizException;
 import cn.com.edtechhub.nftbase.exception.SystemException;
@@ -27,10 +27,10 @@ import java.util.Arrays;
  *
  * @author limou3434
  */
-@Slf4j
 @Component
 @Order(Integer.MIN_VALUE) // 让这个类在 Spring 里执行顺序排到最优先执行
 @Aspect
+@Slf4j
 public class FacadeAspect {
 
     /**
@@ -173,15 +173,14 @@ public class FacadeAspect {
      * @param returnType 返回值类型
      * @param throwable  异常
      * @return 响应对象
-     * @throws NoSuchMethodException
-     * @throws IllegalAccessException
-     * @throws InvocationTargetException
-     * @throws InstantiationException
+     * @throws NoSuchMethodException 找不到构造函数
+     * @throws IllegalAccessException 访问权限不够
+     * @throws InvocationTargetException 调用目标方法异常
+     * @throws InstantiationException 实例化异常
      */
-    private Object getFailedResponse(Class returnType, Throwable throwable) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    private Object getFailedResponse(Class<?> returnType, Throwable throwable) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         // 如果返回值的类型为 BaseResponse 的子类，则创建一个通用的失败响应
-        if (returnType.getDeclaredConstructor().newInstance() instanceof BaseResponse) {
-            BaseResponse response = (BaseResponse) returnType.getDeclaredConstructor().newInstance();
+        if (returnType.getDeclaredConstructor().newInstance() instanceof BaseResponse response) {
 
             // 设置响应布尔
             response.setSuccess(false);

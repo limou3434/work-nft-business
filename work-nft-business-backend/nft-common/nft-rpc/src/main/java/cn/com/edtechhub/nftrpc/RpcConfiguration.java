@@ -1,6 +1,5 @@
-package cn.com.edtechhub.nftrpc.config;
+package cn.com.edtechhub.nftrpc;
 
-import cn.com.edtechhub.nftrpc.facade.FacadeAspect;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
