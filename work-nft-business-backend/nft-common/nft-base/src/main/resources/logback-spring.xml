@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 引入 Spring Boot 内置的 Logback 默认配置（如基础日志级别、默认转换器等） -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- 从 Spring 环境中读取 spring.application.name 配置，赋值给 Logback 上下文变量 app.name，其中 scope="context" 表示该变量在 Logback 整个上下文生效，全局可用 -->
+    <springProperty scope="context" name="app.name" source="spring.application.name"/>
+
+    <!-- 日志输出时，用 %sensitive 标记的内容会被自动脱敏（如手机号 138****1234），com.github.houbb.sensitive 是第三方脱敏组件，需在 pom.xml 引入依赖才能生效 -->
+    <conversionRule conversionWord="sensitive" converterClass="com.github.houbb.sensitive.logback.converter.SensitiveLogbackConverter" />
+
+    <!-- 定义可复用的全局变量 -->
+    <property name="APP_NAME" value="${app.name}"/>
+    <property name="LOG_PATH" value="./logs"/>
+    <property name="LOG_FILE" value="${LOG_PATH}/${APP_NAME}.log"/>
+    <property name="FILE_LOG_PATTERN" value="%-5level[日志时间 %d] - [线程名称 %thread] - [动作类名 %logger] - 日志内容：%sensitive%n"/>
+    <property name="CONSOLE_LOG_PATTERN" value="%-5level[日志时间 %d] - [线程名称 %thread] - [动作类名 %logger] - 日志内容：%sensitive%n"/>
+
+    <!-- 定义名为 APPLICATION 的日志输出器，类型为按 “大小 + 时间” 滚动的文件输出器 -->
+    <appender name="APPLICATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 主日志文件路径（对应上面定义的 LOG_FILE） -->
+        <file>${LOG_FILE}</file>
+
+        <!-- 编码器，定义日志写入文件的格式和编码 -->
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern> <!-- 使用文件日志格式 -->
+            <charset>UTF-8</charset> <!-- 编码配置避免中文乱码 -->
+        </encoder>
+
+        <!-- 滚动策略，按 “时间 + 大小” 切割日志文件 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i.log</fileNamePattern> <!-- 切割后的日志文件名格式：application.log.2026-03-14.0.log、application.log.2026-03-14.1.log -->
+            <maxHistory>7</maxHistory> <!-- 日志文件保留 7 天，超过自动删除 -->
+            <maxFileSize>50MB</maxFileSize> <!-- 单个日志文件最大 50MB，超过则切割（%i 自增） -->
+            <totalSizeCap>20GB</totalSizeCap> <!-- 所有日志文件总大小上限 20GB，超过删除最旧文件 -->
+        </rollingPolicy>
+    </appender>
+
+    <!-- 定义名为 CONSOLE 的日志输出器，类型为控制台输出器 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern> <!-- 使用控制台日志格式 -->
+            <charset>utf8</charset> <!-- 编码配置避免中文乱码 -->
+        </encoder>
+    </appender>
+
+    <!-- 设置日志级别为 INFO（全局默认），默认只保留 INFO 及以上级别，并且同时输出到 “日志文件和控制台” 进行双输出 -->
+    <root level="INFO">
+        <!-- 输出到日志文件    -->
+        <appender-ref ref="APPLICATION"/>
+        <!-- 输出到控制台    -->
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <!-- 对于其他项目来说，如果把本模块作为依赖，其他模块也会自动获得这里的日志配置 -->
+</configuration>
