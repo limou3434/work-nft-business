@@ -32,7 +32,7 @@
     <!-- 继承描述 -->
     <parent>
         <groupId>cn.com.edtechhub</groupId>
-        <artifactId>nft-business</artifactId>
+        <artifactId>nft-goods</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
