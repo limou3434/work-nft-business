@@ -22,14 +22,14 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
- * Facade 注解的切面处理类，实现了统一统计进行参数校验及异常捕获的特定功能
- * 注意 JSR303 提供的注解只是生名，除了 SpringMVC 会帮我们自己接入控制器的参数，大部分情况下我们需要自己实现这个拦截参数的逻辑
+ * Facade 注解的切面处理类，实现了统一统计进行参数校验及异常捕获的特定功能，确保远程调用的返回不是异常而是统一错误的形式结果
+ * 注意 JSR303 提供的注解只是声明，除了 SpringMVC 会帮我们自己接入控制器的参数，大部分情况下我们需要自己实现这个拦截参数的逻辑
  *
  * @author limou3434
  */
 @Slf4j
 @Component
-@Order(Integer.MIN_VALUE)
+@Order(Integer.MIN_VALUE) // 让这个类在 Spring 里执行顺序排到最优先执行
 @Aspect
 public class FacadeAspect {
 
