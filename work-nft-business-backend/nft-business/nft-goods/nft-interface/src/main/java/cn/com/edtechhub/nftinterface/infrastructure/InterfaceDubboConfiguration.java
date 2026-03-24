@@ -1,4 +1,4 @@
-package cn.com.edtechhub.nftnotice.infrastructure;
+package cn.com.edtechhub.nftinterface.infrastructure;
 
 import org.springframework.context.annotation.Configuration;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * @author limou3434
  */
 @Configuration
-public class NoticeDubboConfiguration {
+public class InterfaceDubboConfiguration {
 
     // 暂时没有使用服务
 
