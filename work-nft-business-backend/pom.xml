@@ -7,7 +7,7 @@
     <!-- 作为 “父级 POM” 需要承担以下责任：-->
     <!-- - 解释注释，解释各个模块之间的作用，这里的解释是指注释，其他 POM 模块除了基本的结构注释不再进行详细的解释注释 -->
     <!-- - 依赖仲裁：最为重要的版本管理问题，并且作为模板为其他模块使用 -->
-    <!-- 2. 孙级 POM：如果 “子级 POM” 其下还有子 POM，那么这些子 POM 被称为 “孙级 POM” -->
+    <!-- 2. 孙级 POM：如果 “子级 POM” 其下还有子 POM，那么这些子 POM 被称为 “孙级 POM”，而此时的 “子级 POM” 的作用仅仅是组织 “孙级 POM” -->
     <!-- 3. 共享 POM：版本管理已经交给 “父级 POM” 了，因此按道理来说其他 “子级 POM” 实际上只需要自己引入需要的依赖就可以 -->
     <!-- 但是如果按照上述方法的话，由于引入依赖的颗粒度比较小，各个 “子级 POM、孙级 POM” 之间会出现频繁重复书写同个依赖的问题 -->
     <!-- 因此本项目的做法是，封装部分依赖为可以复用的 POM 为 “共享 POM”，这里面内部的 POM 是颗粒度比较大的依赖集合，可以被 “子级 POM、孙级 POM” 直接使用 -->
@@ -62,7 +62,7 @@
         <spring-cloud-alibaba.version>2023.0.1.2</spring-cloud-alibaba.version>
         <spring-boot.version>3.2.2</spring-boot.version>
         <spring-web.version>6.1.3</spring-web.version>
-        <redisson-spring-boot-starter.version>3.24.3</redisson-spring-boot-starter.version>
+        <h2.version>1.4.200</h2.version>
         <lombok.version>1.18.30</lombok.version>
         <guava.version>32.1.3-jre</guava.version>
         <fastjson2.version>2.0.42</fastjson2.version>
@@ -70,11 +70,11 @@
         <hutool-all.version>5.8.22</hutool-all.version>
         <aspectjrt.version>1.9.20.1</aspectjrt.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
+        <redisson-spring-boot-starter.version>3.24.3</redisson-spring-boot-starter.version>
         <rocketmq-client.version>5.3.0</rocketmq-client.version>
         <dubbo.version>3.2.10</dubbo.version>
         <caffeine.version>3.1.8</caffeine.version>
         <jetcache-starter-redisson.version>2.7.5</jetcache-starter-redisson.version>
-
     </properties>
 
     <!-- 模块描述 -->
@@ -90,6 +90,8 @@
 
     <!-- 依赖描述 -->
     <dependencyManagement>
+        <!-- 注意 dependencyManagement 不仅管理版本，也管理 scope -->
+
         <dependencies>
 
             <!-- Spring -->
@@ -108,20 +110,23 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring-web.version}</version>
+            </dependency>
+
+            <!-- Test -->
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring-web.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.redisson</groupId>
-                <artifactId>redisson-spring-boot-starter</artifactId>
-                <version>${redisson-spring-boot-starter.version}</version>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+                <scope>test</scope>
             </dependency>
 
             <!-- Tools -->
@@ -162,6 +167,11 @@
             </dependency>
 
             <!-- Middleware -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-spring-boot-starter.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
