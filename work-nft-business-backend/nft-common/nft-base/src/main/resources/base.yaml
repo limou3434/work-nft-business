@@ -1,0 +1,45 @@
+# 基础配置文件，由于 父级 POM 的设置，其他模块一旦引入包含本 base.yaml 的 nft-base 模块
+# 那么就会自动引入本配置文件，但是需要用户在 .yaml 中决定是否被读取，然后才能使用这里的配置键对
+# 注意这里的配置键都是以 cn.com.edtech.wnb. 开头的，都是自定义的配置名称
+cn:
+  com:
+    edtechhub:
+      wnb:
+        mysql:
+          host: ${WORK_MYSQL_HOST:114.132.166.26}
+          port: ${WORK_MYSQL_PORT:3306}
+          username: ${WORK_MYSQL_USERNAME:wnb}
+          password: ${WORK_MYSQL_PASSWORD:Qwe54188_}
+          database: ${WORK_MYSQL_DATABASE:work_nft_business}
+        redis:
+          host: ${WORK_REDIS_HOST:114.132.166.26}
+          port: ${WORK_REDIS_PORT:6379}
+          password: ${WORK_REDIS_PASSWORD:Qwe54188_}
+        nacos:
+          host: ${WORK_NACOS_HOST:114.132.166.26}
+          port: ${WORK_NACOS_PORT:8848}
+        elasticsearch:
+          host: ${ELASTIC_SEARCH_HOST:114.132.166.26}
+          port: ${ELASTIC_SEARCH_PORT:9200}
+          username: ${ELASTIC_SEARCH_USERNAME:elastic}
+          password: ${ELASTIC_SEARCH_PASSWORD:Qwe54188_}
+          enable: ${WORK_ELASTICSEARCH_ENABLE:false}
+        xxl-job:
+          host: ${WORK_XXL_JOB_HOST}
+          port: ${WORK_XXL_JOB_PORT:23333}
+          appName: ${WORK_XXL_JOB_APP_NAME:xxl-job-executor}
+          accessToken: ${WORK_XXL_JOB_ACCESS_TOKEN:default_token}
+        sentinel:
+          host: ${WORK_SENTINEL_HOST:114.132.166.26}
+          port: ${WORK_SENTINEL_PORT:8099}
+          data-id: nfturbo-gateway-sentinel # TODO：我不理解为什么要这么起名
+        rocketmq:
+          host: ${WORK_ROCKETMQ_HOST:114.132.166.26}
+          port: ${WORK_ROCKETMQ_PORT:9876}
+        dubbo:
+          namespace: dubbo_server # TODO：按照 Nacos 的注册分层来说，我觉得没有必要吧...
+          group: dubbo # TODO：这个组别我也有待怀疑
+        seata:
+          namespace: seata_server # TODO：这里也保持怀疑态度
+          group: seata # TODO：这个组别我也有待怀疑
+          data-id: seataServer.properties # TODO：这个数据 ID 我也有待怀疑

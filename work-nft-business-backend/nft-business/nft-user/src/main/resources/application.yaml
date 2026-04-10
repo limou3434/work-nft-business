@@ -1,3 +1,7 @@
 spring:
   application:
-    name: nft-user
+    name: @application.name@
+  config:
+    import: classpath:base.yaml
+server:
+  port: 8083
